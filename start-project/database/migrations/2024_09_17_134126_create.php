@@ -15,10 +15,10 @@ class Create extends Migration
     {
         Schema::create('create', function (Blueprint $table) {
             $table->id();
-            $table->string('tipo');
-            $table->string('modelo');
-            $table->integer('placa');
-            $table->string('cor');
+            $table->string('type');
+            $table->string('model');
+            $table->integer('plate');
+            $table->string('color');
             $table->timestamps();
         });
     }

@@ -12,21 +12,21 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    public function store(Request $request){
+    public function store($request){
 
     $request->validate([
-        'tipo'=>'required',
-        'modelo' => 'required',
-        'placa' => 'required',
-        'cor' => 'required'
+        'type'=>'required',
+        'model' => 'required',
+        'plate' => 'required',
+        'color' => 'required'
     ]);
     Veiculos::create([
-        'tipo' => $request->tipo,
-        'modelo' => mb_strtoupper($request->modelo, 'UTF-8'),
-        'placa' => $request->placa,
-        'cor' => $request->cor,
+        'type' => $request->tipo,
+        'model' => mb_strtoupper($request->modelo, 'UTF-8'),
+        'plate' => $request->placa,
+        'color' => $request->cor,
     ]);
-    return redirect()->route('veiculos.index');    
+    return redirect()->route('vehicles.index');    
     }
 }
 
