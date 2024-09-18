@@ -17,5 +17,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/main', function () {
-    return view('main');
+    return view('home');
 });
+
+Route::get('/report/brand/{brand_id}', 
+    'App\Http\Controllers\EixoController@report')->name('brand.report');
+Route::get('/graph/brand', 
+    'App\Http\Controllers\BrandController@graph')->name('brand.graph');
+
+Route::resource('/brand', 'App\Http\Controllers\BrandController');
+Route::resource('/vehicle', 'App\Http\Controllers\VehicleController');
